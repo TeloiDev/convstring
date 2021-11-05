@@ -11,7 +11,7 @@ ConvString is a NPM package that lets you change your strings to inter alia:
 
 ## Why us?
 
-- 😎 We guarantee the great performance
+- 😎 We guarantee great performance
 - 🍀 ConvString is object-oriented and it allows you to create your own converter
 - <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" align="center" width="25"> Clean Typescript code
 
@@ -19,7 +19,7 @@ ConvString is a NPM package that lets you change your strings to inter alia:
 
 # Documentation
 
-To start your jounrey with ConvString you need to install the package with npm.
+To start your journey with ConvString you need to install the package with npm.
 Run `npm install convstring` in the command line of your project. Then import it using
 
 ```js
