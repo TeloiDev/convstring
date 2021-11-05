@@ -1,0 +1,25 @@
+{
+  "name": "convstring",
+  "typings": "build/index.js",
+  "version": "v0.0.1-alpha",
+  "description": "Change strings in various ways",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [
+    "string",
+    "converter",
+    "convert",
+    "strings",
+    "binary",
+    "replace"
+  ],
+  "author": "teloi",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "typescript": "^4.4.4"
+  }
+}
