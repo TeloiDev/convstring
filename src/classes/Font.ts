@@ -1,17 +1,19 @@
 import { stdout } from "process";
 
-type ValidFont = "classic";
+type ValidFont = "classic" | "future" | "square" | "subscript" | "superscript" | "upsidedown";
 
 class Font {
   static async apply(input: string, font: ValidFont): Promise<string> {
-    let fontArr = await require(`../assets/fonts/${font}.json`);
+    const fontArr = await require(`../assets/fonts/${font}.json`);
     let output = "";
 
     for (const char of input.split("")) {
       if (fontArr[char] !== undefined) output += fontArr[char];
       else if (fontArr[char.toLowerCase()] !== undefined) output += fontArr[char.toLowerCase()];
-      else output = output + char;
+      else output += char;
     }
+
+    if (font === "upsidedown") output = output.split("").reverse().join("");
     return output;
   }
 
@@ -19,6 +21,7 @@ class Font {
     interface StringMap {
       [key: string]: string;
     }
+
     let i = 0;
     let fontObject: StringMap = {};
 
