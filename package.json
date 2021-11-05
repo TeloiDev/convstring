@@ -14,7 +14,10 @@
     "convert",
     "strings",
     "binary",
-    "replace"
+    "replace",
+    "fonts",
+    "oop",
+    "object-oriented"
   ],
   "author": "teloi",
   "license": "MIT",
