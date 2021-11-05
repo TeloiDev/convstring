@@ -13,7 +13,7 @@ ConvString is a NPM package that lets you change your strings to inter alia:
 
 - 😎 We guarantee the great performance
 - 🍀 ConvString is object-oriented and it allows you to create your own converter
-- <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" align="center" width="25"> Clean Typescript Code code
+- <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" align="center" width="25"> Clean Typescript code
 
 <br/>
 
