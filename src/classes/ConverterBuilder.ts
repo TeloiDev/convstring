@@ -10,6 +10,7 @@ class ConverterBuilder {
     if (this.convertedFrom.length === 0 || this.convertedTo.length === 0 || !args)
       throw new Error("Param @args must be a non-empty object");
   }
+
   useConverter(input: string): string {
     if (!input || input.length === 0) throw nonStringInputError;
 
