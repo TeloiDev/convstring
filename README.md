@@ -34,9 +34,9 @@ const { Convert } = require("convstring");
 const conv = new Convert({"foo":"bar"});
 console.log(conv.useConverter("foo"); // expected output: "bar"
 
-console.log(Convert.toDiscordEmoji("foo"); // expected output: :regional_indicator_f: :regional_indicator_o: :regional_indicator_o:
+console.log(Convert.toDiscordEmoji("foo"); // expected output: ":regional_indicator_f: :regional_indicator_o: :regional_indicator_o:"
 
-console.log(Convert.toBinary("bar")); // expected output: 1100010 1100001 1110010
+console.log(Convert.toBinary("bar")); // expected output: "1100010 1100001 1110010"
 ```
 
 <br/>
@@ -48,9 +48,7 @@ console.log(Convert.toBinary("bar")); // expected output: 1100010 1100001 111001
 ```js
 const { Font } = require("convstring");
 
-(async () => {
-  console.log(await Font.apply("foo bar", "classic")); // expected output: 𝔣𝔬𝔬 𝔟𝔞𝔯
-})(); // Font.apply() returns a promise so you have to await it
+console.log(Font.apply("foo bar", "classic")); // expected output: "𝔣𝔬𝔬 𝔟𝔞𝔯"
 ```
 
 <br/>
