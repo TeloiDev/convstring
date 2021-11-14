@@ -37,6 +37,9 @@ console.log(conv.useConverter("foo"); // expected output: "bar"
 console.log(Convert.toDiscordEmoji("foo"); // expected output: ":regional_indicator_f: :regional_indicator_o: :regional_indicator_o:"
 
 console.log(Convert.toBinary("bar")); // expected output: "1100010 1100001 1110010"
+
+console.log(Convert.toCeasarCipher("abc", 4)) // expected output: "efg" 
+// second param determines the shift of letteres (default: 3)
 ```
 
 <br/>

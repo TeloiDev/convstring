@@ -30,6 +30,43 @@ class Convert extends ConverterBuilder {
     }
     return output;
   }
+
+  static toCeasarCipher(input: string, shift?: number): string {
+    if (shift === undefined) shift = 3;
+    interface StringMap {
+      [key: string]: string;
+    }
+
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    const length = alphabet.length;
+
+    shift = shift % length;
+
+    const firstElements = alphabet.slice(0, shift);
+    const remainingElements = alphabet.slice(shift, length);
+
+    const shiftedAlphabet = [...remainingElements, ...firstElements];
+    let output = "";
+
+    let i = 0;
+    let alphabetObject: StringMap = {};
+
+    for (const char of shiftedAlphabet) {
+      alphabetObject[alphabet[i]] = char;
+      i++;
+    }
+
+    for (const char of input.split("")) {
+      if (alphabetObject[char] !== undefined) {
+        output += alphabetObject[char];
+        continue;
+      }
+
+      output += char;
+    }
+
+    return output;
+  }
 }
 
 export { Convert };
