@@ -1,8 +1,5 @@
 # ConvString
 
-[![](https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg)](https://www.npmjs.com/package/convstring)
-[![](https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg)](https://github.com/TeloiDev/convstring)
-
 ConvString is a NPM package that lets you change your strings to inter alia:
 
 - 🤖 Binary Strings
