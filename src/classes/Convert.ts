@@ -2,7 +2,7 @@ import { ConverterBuilder } from "./ConverterBuilder";
 
 const nonStringInputError = new Error("Param @input must be a non-empty string");
 
-class Convert extends ConverterBuilder {
+export class Convert extends ConverterBuilder {
   static toDiscordEmoji(input: string): string {
     if (!input || input.length === 0) throw nonStringInputError;
 
@@ -31,8 +31,7 @@ class Convert extends ConverterBuilder {
     return output;
   }
 
-  static toCeasarCipher(input: string, shift?: number): string {
-    if (shift === undefined) shift = 3;
+  static toCeasarCipher(input: string, shift = 3): string {
     interface StringMap {
       [key: string]: string;
     }
@@ -68,5 +67,3 @@ class Convert extends ConverterBuilder {
     return output;
   }
 }
-
-export { Convert };

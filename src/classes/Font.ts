@@ -8,7 +8,7 @@ type ValidFont =
   | "cursive"
   | "double-struck";
 
-class Font {
+export class Font {
   static apply(input: string, font: ValidFont): string {
     const fontArr = require(`../assets/fonts/${font}.json`);
     let output = "";
@@ -41,5 +41,3 @@ class Font {
     process.stdout.write(JSON.stringify(fontObject) + "\n");
   }
 }
-
-export { Font };

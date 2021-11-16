@@ -1,8 +1,9 @@
 const nonStringInputError = new Error("Param @input must be a non-empty string");
 
-class ConverterBuilder {
+export class ConverterBuilder {
   convertedFrom: string[];
   convertedTo: string[];
+
   constructor(args: object) {
     this.convertedFrom = Object.keys(args);
     this.convertedTo = Object.values(args);
@@ -27,5 +28,3 @@ class ConverterBuilder {
     return output;
   }
 }
-
-export { ConverterBuilder };
