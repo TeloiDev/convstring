@@ -1,7 +1,7 @@
 {
   "name": "convstring",
   "typings": "build/index.js",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Change strings in various ways",
   "main": "build/index.js",
   "scripts": {
