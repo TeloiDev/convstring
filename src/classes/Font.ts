@@ -6,16 +6,18 @@ type ValidFont =
   | "superscript"
   | "upsidedown"
   | "cursive"
-  | "double-struck";
+  | "double-struck"
+  | "circle"
+  | "parenthesized";
 
 export class Font {
   static apply(input: string, font: ValidFont): string {
-    const fontArr = require(`../assets/fonts/${font}.json`);
+    const fontObj = require(`../../assets/fonts/${font}.json`);
     let output = "";
 
     for (const char of input.split("")) {
-      if (fontArr[char] !== undefined) {
-        output += fontArr[char];
+      if (fontObj[char] !== undefined) {
+        output += fontObj[char];
         continue;
       }
 
