@@ -58,7 +58,7 @@ console.log(Font.apply("foo bar", "classic")); // expected output: "𝔣𝔬𝔬
 
 ## Contributing
 
-Contributions are always welcome. Especially when it comes to custom fonts. Your contribution will be accepted as long as you follow the template that is defined in a private method of `Font` class.
+Contributions are always welcome. Especially when it comes to custom fonts. Your contribution will be accepted as long as you follow the template that is defined in a createFontObject method of `Tools` class.
 
 ### Contributors:
 
