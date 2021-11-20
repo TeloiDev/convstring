@@ -1,10 +1,10 @@
 import { ConverterBuilder } from "./ConverterBuilder";
 
-const nonStringInputError = new Error("Param @input must be a non-empty string");
+const nonStringError = new Error("Param @input must be a non-empty string");
 
 export class Convert extends ConverterBuilder {
   static toDiscordEmoji(input: string): string {
-    if (!input || input.length === 0) throw nonStringInputError;
+    if (!input || input.length === 0) throw nonStringError;
 
     const string = input.toLowerCase();
     let convertedWords = "";
@@ -20,18 +20,18 @@ export class Convert extends ConverterBuilder {
   }
 
   static toBinary(input: string): string {
-    if (!input || input.length === 0) throw nonStringInputError;
+    if (!input || input.length === 0) throw nonStringError;
 
-    const string = input;
     let output = "";
 
-    for (let i = 0; i < string.length; i++) {
-      output += string[i].charCodeAt(0).toString(2) + " ";
+    for (let i = 0; i < input.length; i++) {
+      output += input[i].charCodeAt(0).toString(2) + " ";
     }
     return output;
   }
 
   static toCeasarCipher(input: string, shift = 3): string {
+    if (!input || input.length === 0) throw nonStringError;
     interface StringMap {
       [key: string]: string;
     }

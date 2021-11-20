@@ -1,5 +1,3 @@
-const nonStringInputError = new Error("Param @input must be a non-empty string");
-
 export class ConverterBuilder {
   convertedFrom: string[];
   convertedTo: string[];
@@ -13,14 +11,13 @@ export class ConverterBuilder {
   }
 
   useConverter(input: string): string {
-    if (!input || input.length === 0) throw nonStringInputError;
-
-    const string = input;
+    if (!input || input.length === 0) throw new Error("Param @input must be a non-empty string");
+    
     let output!: string;
 
     for (let i = 0; i < this.convertedFrom.length; i++) {
       if (i === 0) {
-        output = string.replace(new RegExp(this.convertedFrom[i], "g"), this.convertedTo[i]);
+        output = input.replace(new RegExp(this.convertedFrom[i], "g"), this.convertedTo[i]);
       }
 
       output = output.replace(new RegExp(this.convertedFrom[i], "g"), this.convertedTo[i]);

@@ -2,6 +2,8 @@ import { ValidFont } from "../types/ValidFont";
 
 export class Font {
   static apply(input: string, font: ValidFont): string {
+    if (!input || input.length === 0) throw new Error("Param @input must be a non-empty string");
+
     const fontObj = require(`../../assets/fonts/${font}.json`);
     let output = "";
 
