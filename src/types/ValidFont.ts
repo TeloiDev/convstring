@@ -8,4 +8,9 @@ export type ValidFont =
   | "cursive"
   | "double-struck"
   | "circle"
-  | "parenthesized";
+  | "parenthesized"
+  | "asian-like"
+  | "bold"
+  | "italic"
+  | "wide"
+  | "runic";
