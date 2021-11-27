@@ -1,27 +1,29 @@
+import { OnlyStrings } from "../types/OnlyStrings";
+
 export class ConverterBuilder {
-  convertedFrom: string[];
-  convertedTo: string[];
+  private converterPattern: any;
+  constructor(args: OnlyStrings) {
+    this.converterPattern = args;
 
-  constructor(args: object) {
-    this.convertedFrom = Object.keys(args);
-    this.convertedTo = Object.values(args);
-
-    if (this.convertedFrom.length === 0 || this.convertedTo.length === 0 || !args)
-      throw new Error("Param @args must be a non-empty object");
+    if (!args || !Object.values(args).every((i) => typeof i === "string")) {
+      throw new Error("Param @args must be a non-empty object that includes only strings");
+    }
   }
 
   useConverter(input: string): string {
     if (!input || input.length === 0) throw new Error("Param @input must be a non-empty string");
-    
-    let output!: string;
 
-    for (let i = 0; i < this.convertedFrom.length; i++) {
-      if (i === 0) {
-        output = input.replace(new RegExp(this.convertedFrom[i], "g"), this.convertedTo[i]);
+    let output = "";
+
+    for (const char of input.split("")) {
+      if (this.converterPattern[char] !== undefined) {
+        output += this.converterPattern[char];
+        continue;
       }
 
-      output = output.replace(new RegExp(this.convertedFrom[i], "g"), this.convertedTo[i]);
+      output += char;
     }
+
     return output;
   }
 }

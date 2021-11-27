@@ -23,23 +23,27 @@ To start your journey with ConvString you need to install the package with npm.
 Run `npm install convstring` in the command line of your project. Then import it using
 
 ```js
-const { Convert, Font } = require("convstring");
+const { Convert, Font, ConverterBuilder, Tools } = require("convstring");
 ```
 
 #### All Convert methods:
 
 ```js
-const { Convert } = require("convstring");
+const { Convert, ConverterBuilder } = require("convstring");
 
-const conv = new Convert({"foo":"bar"});
+const conv = new ConverterBuilder({"foo":"bar"});
 console.log(conv.useConverter("foo"); // expected output: "bar"
 
 console.log(Convert.toDiscordEmoji("foo"); // expected output: ":regional_indicator_f: :regional_indicator_o: :regional_indicator_o:"
 
 console.log(Convert.toBinary("bar")); // expected output: "1100010 1100001 1110010"
 
-console.log(Convert.toCeasarCipher("abc", 4)) // expected output: "efg" 
+console.log(Convert.toCeasarCipher("abc", 4)) // expected output: "efg"
 // second param determines the shift of letteres (default: 3)
+
+console.log(Convert.toZalgo("foo bar baz", 6 { up: true, down: true, middle: true })); // Expected output: "foo bar baz" with glitching chars
+// second param represent the level of craziness of returned string
+// third param are options (self-explanatory)
 ```
 
 <br/>
@@ -58,7 +62,7 @@ console.log(Font.apply("foo bar", "classic")); // expected output: "𝔣𝔬𝔬
 
 ## Contributing
 
-Contributions are always welcome. Especially when it comes to custom fonts. Your contribution will be accepted as long as you follow the template that is defined in a createFontObject method of `Tools` class.
+Contributions are always welcome. Especially when it comes to custom fonts. Your font contribution will be accepted as long as you follow the template that is defined in a `createFontObject` method of `Tools` class. For any major changes open an issue first and describe what you want to achieve.
 
 ### Contributors:
 

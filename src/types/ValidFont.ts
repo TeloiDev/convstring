@@ -13,4 +13,12 @@ export type ValidFont =
   | "bold"
   | "italic"
   | "wide"
-  | "runic";
+  | "runic"
+  | "bold-italic"
+  | "filled-circle"
+  | "money"
+  | "monospace"
+  | "sans"
+  | "small-capital"
+  | "ascii"
+  | "wild";
