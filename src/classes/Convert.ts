@@ -1,7 +1,7 @@
 import { ConverterBuilder } from "./ConverterBuilder";
 import { ZalgoOptions } from "../types/ZalgoOptions";
 import { CrazinessRange } from "../types/ZalgoCraziness";
-import { OnlyStrings } from "../types/OnlyStrings";
+import { StringOnlyObject } from "../types/StringOnlyObject";
 
 const nonStringError = new Error("Param @input must be a non-empty string");
 
@@ -49,7 +49,7 @@ export class Convert {
     const shiftedAlphabet = [...remainingElements, ...firstElements];
 
     let i = 0;
-    let alphabetObject: OnlyStrings = {};
+    let alphabetObject: StringOnlyObject = {};
 
     for (const char of shiftedAlphabet) {
       alphabetObject[alphabet[i]] = char;
@@ -85,11 +85,13 @@ export class Convert {
           output += zalgoUp[randomElement(zalgoUp)];
         }
       }
+
       if (options.down === true) {
         for (let j = 0; j < crazinessRange(8); j++) {
           output += zalgoDown[randomElement(zalgoDown)];
         }
       }
+
       if (options.middle === true) {
         for (let j = 0; j < crazinessRange(4); j++) {
           output += zalgoMiddle[randomElement(zalgoMiddle)];

@@ -1,13 +1,14 @@
-import { OnlyStrings } from "../types/OnlyStrings";
+import { StringOnlyObject } from "../types/StringOnlyObject";
 
 export class ConverterBuilder {
-  private converterPattern: any;
-  constructor(args: OnlyStrings) {
-    this.converterPattern = args;
-
+  constructor(private args: StringOnlyObject) {
     if (!args || !Object.values(args).every((i) => typeof i === "string")) {
       throw new Error("Param @args must be a non-empty object that includes only strings");
     }
+  }
+
+  get getConverterPattern(): object {
+    return this.args;
   }
 
   useConverter(input: string): string {
@@ -16,12 +17,7 @@ export class ConverterBuilder {
     let output = "";
 
     for (const char of input.split("")) {
-      if (this.converterPattern[char] !== undefined) {
-        output += this.converterPattern[char];
-        continue;
-      }
-
-      output += char;
+      this.args[char] !== undefined ? (output += this.args[char]) : (output += char);
     }
 
     return output;
