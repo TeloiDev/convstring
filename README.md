@@ -1,9 +1,14 @@
+[![NPM](https://nodei.co/npm/convstring.png?compact=true)](https://npmjs.org/package/convstring)
+</br>
+[![GitHub](https://img.shields.io/badge/Github-Link-lightgrey/endpoint?logo=github)](https://github.com/TeloiDev/convstring)
+
 # ConvString
 
 ConvString is a NPM package that lets you change your strings to inter alia:
 
 - 🤖 Binary Strings
 - 👥 Discord Emoji
+- 🎭 Zalgo Text
 - ✨ Change your text's font
 - 🌺 And many other cool stuff
 
@@ -57,6 +62,8 @@ const { Font } = require("convstring");
 
 console.log(Font.apply("foo bar", "classic")); // expected output: "𝔣𝔬𝔬 𝔟𝔞𝔯"
 ```
+
+## You can find a list of all available fonts [here](https://github.com/TeloiDev/convstring/blob/master/FONTS.md).
 
 <br/>
 
