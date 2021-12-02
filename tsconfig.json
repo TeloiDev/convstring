@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "esnext",                          
-    "module": "commonjs",                    
+    "target": "esnext",
+    "module": "commonjs",
     "lib": ["dom"],
-    "declaration": true,                     
+    "declaration": true,
     "allowJs": true,
-    "outDir": "build",                          
-    "strict": true,         
+    "outDir": "build",
+    "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
