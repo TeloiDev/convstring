@@ -7,7 +7,7 @@ const nonStringError = new Error("Param @input must be a non-empty string");
 
 export class Convert {
   static toDiscordEmoji(input: string): string {
-    if (!input || input.length === 0) throw nonStringError;
+    this.isValidInput(input);
 
     const string = input.toLowerCase();
     let convertedWords = "";
@@ -24,7 +24,7 @@ export class Convert {
   }
 
   static toBinary(input: string): string {
-    if (!input || input.length === 0) throw nonStringError;
+    this.isValidInput(input);
 
     let output = "";
 
@@ -36,7 +36,7 @@ export class Convert {
   }
 
   static toCeasarCipher(input: string, shift = 3): string {
-    if (!input || input.length === 0) throw nonStringError;
+    this.isValidInput(input);
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
     const length = alphabet.length;
@@ -63,11 +63,11 @@ export class Convert {
 
   static toZalgo(input: string, craziness: CrazinessRange, options: ZalgoOptions): string {
     // TODO: Optimise? less loops?
-    if (!input || input.length === 0) throw nonStringError;
+    this.isValidInput(input);
 
-    const zalgoUp = require("../../assets/zalgoChars/up.json");
-    const zalgoDown = require("../../assets/zalgoChars/down.json");
-    const zalgoMiddle = require("../../assets/zalgoChars/middle.json");
+    const zalgoUp: string[] = require("../../assets/zalgoChars/up.json");
+    const zalgoDown: string[] = require("../../assets/zalgoChars/down.json");
+    const zalgoMiddle: string[] = require("../../assets/zalgoChars/middle.json");
 
     let output = "";
     const randomElement = (arr: string[]): number => Math.floor(Math.random() * arr.length);
@@ -102,12 +102,20 @@ export class Convert {
     return output;
   }
 
-  private static isZalgoChar(char: string, zalgoArrs: string[]): boolean {
+  static reverse(input: string): string {
+    return input.split("").reverse().join("");
+  }
+
+  private static isZalgoChar(char: string, zalgoArrs: string[][]): boolean {
     for (const arr of zalgoArrs) {
       for (let i = 0; i < arr.length; i++) {
         if (char === arr[i]) return true;
       }
     }
     return false;
+  }
+
+  private static isValidInput(input: string): void {
+    if (!input || input.length === 0) throw nonStringError;
   }
 }
